@@ -1,13 +1,32 @@
-# Plasmodium_PopGen
 
-This is an IRT3/Master's thesis project vis-à-vis the EES Masters at LMU, Munich Germany. It is being completed at the Population Genetics Lab, under Prof. Dr. Aurélien Tellier and Prof. Dr Dirk Metzler, at the Technical university of Munich, Germany. 
+# Project Overview
+
+## SMC-Based Parameter Inference from *Plasmodium falciparum* Data
+
+We infer demographic and coalescent parameters from whole-genome sequencing data of *Plasmodium falciparum* using a Sequentially Markovian Coalescent (SMC)–based framework. Given the parasite’s extreme reproductive variance and recurrent transmission bottlenecks, standard Kingman-based SMC methods may be inappropriate.
+
+To address this, we apply **SMβC**, an extension of MSMC that accommodates multiple-merger genealogies under the β-coalescent. Implemented via the R package **eSMC2**, SMβC models the distribution of first coalescence events along the genome while allowing for simultaneous lineage mergers.
+
+The primary parameter of interest is the β-coalescent parameter **α**, where lower values indicate more frequent and larger multiple-merger events. Estimates of α, alongside effective population size trajectories, are used to characterize sweepstake-like reproduction and its impact on genome evolution.
+
+The robustness of the method, when applied to genomes matching the size and recombination and mutation rates of **Plasmodium falciparum**, is assessed by applying the SMC framework to simulated data.
 
 
-Recent studies reveal that the Kingman coalescent may not fully capture population dynamics in species with high fecundity and early mortality, like marine organisms and rapidly adapting pathogens2. These species often exhibit "sweepstakes reproduction," where few individuals produce many surviving offspring, leading to multiple lineage mergers[1]. To address this, Multiple Merger Coalescent (MMC) models, such as the Beta-Coalescent[2], have emerged. These models allow for simultaneous mergers, providing a more accurate framework for studying demographic history and genetic diversity.
+## Repository Structure
 
-In Plasmodium falciparum (the malarial parasite) the life cycle involves severe bottlenecks and extreme reproductive variance, both due to within human/mosquito host selection as well as between vector/host transmission, impacting genome evolution. This pattern of recurrent bottlenecks could potentially lead to non-Kingman i.e. multiple merger genealogies. Traditional methods to estimate selection or demography often overlook these dynamics, and performing standard analysis using Kingman assumptions may bias results. Thus, we aim to infer the genomic signatures of multiple merger coalescence through a statistical population genetic analysis of whole genome sequencing data from Plasmodium falciparum samples from South-east Asia, a region experiencing recent drug-resistant parasite burden.  We aim to do this via a combination of analytical approaches, including a descriptive statistical study of patterns of genome wide diversity, selection and recombination, combined with inferential statistical study of parameter inference via an SMC based workflow implemented via the R package eSMC2 [3]. 
+The repository is organized into three main folders:
 
-We expect genome wide trends in diversity and recombination as theoretically predicted by simulation based studies [4], including a U-shaped derived allele frequency spectrum and long-range dependencies in linkage. The SMC method, (SMβC, developed by Korfmann et al6) builds on the theoretical framework of MSMC, but extends it to handle multiple merger events characteristic of the Beta coalescent. We aim to implement the SMβC, which follows the distribution of the first coalescence event of a sample along sequences assuming a β-coalescent process. SMβC aims to estimate the Beta coalescent parameter α, lower values of which directly indicates a higher frequency and larger multiple merger events. Finally, a validation approach is proposed, which would involve simulating data using SMβC estimated parameters and assessing if the simulations can reproduce key features of the data. We thus aim to detect multiple merger events and better understand life history, reproductive dynamics, and sweepstake-like patterns in Plasmodium falciparum. This approach can refine our understanding of genome evolution and basic biology of the malarial parasite, which could potentially aid in an understanding of its transmission dynamics and help develop effective control strategies against malaria.
+1. **Figures**  
+   Contains all result visualizations as `.png` files.
 
+2. **Data Processing**  
+   Includes Bash scripts and Jupyter notebooks used for data download, preprocessing, and exploratory visualization.
 
-[1] Eldon, B. & Stephan, W. Sweepstakes reproduction facilitates rapid adaptation in highly fecund populations. Molecular Ecology 33, e16903 (2024). [2] Kersting, G., Schweinsberg, J. & Wakolbinger, A. The evolving beta coalescent. Electronic Journal of Probability 19, 1–27 (2014). [3] Sellinger, T. P. P., Awad, D. A., Moest, M. & Tellier, A. Inference of past demography, dormancy and self-fertilization rates from whole genome sequence data. PLOS Genetics 16, e1008698 (2020). [4] Korfmann, K., Sellinger, T., Freund, F., Fumagalli, M. & Tellier, A. Simultaneous Inference of Past Demography and Selection from the Ancestral Recombination Graph under the Beta Coalescent. 2022.09.28.508873 Preprint at https://doi.org/10.1101/2022.09.28.508873 (2022).
+3. **Final Analysis**  
+   Contains six subfolders covering the complete analysis workflow, including:
+   - Structure analysis for sample selection  
+   - Sample selection for SMC-based inference  
+   - LDhat analysis to identify low-recombination regions for subsetting  
+   - Simulation-based validation of SMC methods  
+   - Scripts to generate the `multihetsepfile` required for SMC execution  
+   - Scripts for SMC runs and final visualization of inferred results
