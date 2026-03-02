@@ -9,7 +9,7 @@ To address this, we apply **SMβC**, an extension of MSMC that accommodates mult
 
 The primary parameter of interest is the β-coalescent parameter **α**, where lower values indicate more frequent and larger multiple-merger events. Estimates of α, alongside effective population size trajectories, are used to characterize sweepstake-like reproduction and its impact on genome evolution.
 
-The robustness of the method, when applied to genomes matching the size and recombination and mutation rates of **Plasmodium falciparum**, is assessed by applying the SMC framework to simulated data.
+The robustness of the method, when applied to genomes matching the size and recombination and mutation rates of *Plasmodium falciparum*, is assessed by applying the SMC framework to simulated data.
 
 
 ## Repository Structure
