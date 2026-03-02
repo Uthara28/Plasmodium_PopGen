@@ -1,0 +1,15 @@
+
+-------------------------------------------------------------------
+                            p o n g
+      by A. Behr, K. Liu, T. Devlin, G. Liu-Fang, and S. Ramachandran
+                       Version 1.5 (2021)
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+
+pong_filemap file: /dss/dsshome1/09/go29cak2/Plasmodium_us/Structure/Admixture/admixture_white2011_abfilt/allchr/filemap.txt
+Distance metric: jaccard
+Similarity threshold: 0.970000
+Verbose: False
+
+Full command: /dss/dsshome1/09/go29cak2/miniconda3/envs/py39/bin/pong -m /dss/dsshome1/09/go29cak2/Plasmodium_us/Structure/Admixture/admixture_white2011_abfilt/allchr/filemap.txt -i /dss/dsshome1/09/go29cak2/Plasmodium_us/Structure/Admixture/ind2pop_forpong/ind2pop_abfilt.txt -o /dss/dsshome1/09/go29cak2/Plasmodium_us/Structure/Admixture/admixture_white2011_abfilt/allchr/pong

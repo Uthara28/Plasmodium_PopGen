@@ -1,0 +1,108 @@
+
+-------------------------------------------------------------------
+                            p o n g
+      by A. Behr, K. Liu, T. Devlin, G. Liu-Fang, and S. Ramachandran
+                       Version 1.5 (2021)
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+
+Results summary
+===============
+
+____________________________________________K=2
+Number of runs: 4
+Major mode: Admixture_k2_iter3
+
+Representative runs: Admixture_k2_iter3, Admixture_k2_iter1
+	Admixture_k2_iter3 represents 3 runs: runs Admixture_k2_iter3, Admixture_k2_iter4, Admixture_k2_iter2. Avg sim within = 0.999296
+	Admixture_k2_iter1 represents 1 run: run Admixture_k2_iter1
+Avg sim between modes = 0.803543
+
+____________________________________________K=3
+Number of runs: 4
+Major mode: Admixture_k3_iter4
+
+Representative runs: Admixture_k3_iter4, Admixture_k3_iter1, Admixture_k3_iter3
+	Admixture_k3_iter4 represents 2 runs: runs Admixture_k3_iter4, Admixture_k3_iter2. Avg sim within = 0.975370
+	Admixture_k3_iter1 represents 1 run: run Admixture_k3_iter1
+	Admixture_k3_iter3 represents 1 run: run Admixture_k3_iter3
+Avg sim between modes = 0.681128
+
+____________________________________________K=4
+Number of runs: 4
+Major mode: Admixture_k4_iter1
+
+Representative runs: Admixture_k4_iter1, Admixture_k4_iter2, Admixture_k4_iter3, Admixture_k4_iter4
+	Admixture_k4_iter1 represents 1 run: run Admixture_k4_iter1
+	Admixture_k4_iter2 represents 1 run: run Admixture_k4_iter2
+	Admixture_k4_iter3 represents 1 run: run Admixture_k4_iter3
+	Admixture_k4_iter4 represents 1 run: run Admixture_k4_iter4
+Avg sim between modes = 0.782546
+
+____________________________________________K=5
+Number of runs: 4
+Major mode: Admixture_k5_iter4
+
+Representative runs: Admixture_k5_iter4, Admixture_k5_iter2, Admixture_k5_iter3, Admixture_k5_iter1
+	Admixture_k5_iter4 represents 1 run: run Admixture_k5_iter4
+	Admixture_k5_iter2 represents 1 run: run Admixture_k5_iter2
+	Admixture_k5_iter3 represents 1 run: run Admixture_k5_iter3
+	Admixture_k5_iter1 represents 1 run: run Admixture_k5_iter1
+Avg sim between modes = 0.749103
+
+____________________________________________K=6
+Number of runs: 4
+Major mode: Admixture_k6_iter2
+
+Representative runs: Admixture_k6_iter2, Admixture_k6_iter1, Admixture_k6_iter4, Admixture_k6_iter3
+	Admixture_k6_iter2 represents 1 run: run Admixture_k6_iter2
+	Admixture_k6_iter1 represents 1 run: run Admixture_k6_iter1
+	Admixture_k6_iter4 represents 1 run: run Admixture_k6_iter4
+	Admixture_k6_iter3 represents 1 run: run Admixture_k6_iter3
+Avg sim between modes = 0.868415
+
+____________________________________________K=7
+Number of runs: 4
+Major mode: Admixture_k7_iter3
+
+Representative runs: Admixture_k7_iter3, Admixture_k7_iter1, Admixture_k7_iter4, Admixture_k7_iter2
+	Admixture_k7_iter3 represents 1 run: run Admixture_k7_iter3
+	Admixture_k7_iter1 represents 1 run: run Admixture_k7_iter1
+	Admixture_k7_iter4 represents 1 run: run Admixture_k7_iter4
+	Admixture_k7_iter2 represents 1 run: run Admixture_k7_iter2
+Avg sim between modes = 0.818086
+
+____________________________________________K=8
+Number of runs: 4
+Major mode: Admixture_k8_iter4
+
+Representative runs: Admixture_k8_iter4, Admixture_k8_iter2, Admixture_k8_iter3, Admixture_k8_iter1
+	Admixture_k8_iter4 represents 1 run: run Admixture_k8_iter4
+	Admixture_k8_iter2 represents 1 run: run Admixture_k8_iter2
+	Admixture_k8_iter3 represents 1 run: run Admixture_k8_iter3
+	Admixture_k8_iter1 represents 1 run: run Admixture_k8_iter1
+Avg sim between modes = 0.874081
+
+____________________________________________K=9
+Number of runs: 4
+Major mode: Admixture_k9_iter3
+
+Representative runs: Admixture_k9_iter3, Admixture_k9_iter4, Admixture_k9_iter2, Admixture_k9_iter1
+	Admixture_k9_iter3 represents 1 run: run Admixture_k9_iter3
+	Admixture_k9_iter4 represents 1 run: run Admixture_k9_iter4
+	Admixture_k9_iter2 represents 1 run: run Admixture_k9_iter2
+	Admixture_k9_iter1 represents 1 run: run Admixture_k9_iter1
+Avg sim between modes = 0.820523
+
+____________________________________________K=10
+Number of runs: 4
+Major mode: Admixture_k10_iter3
+
+Representative runs: Admixture_k10_iter3, Admixture_k10_iter1, Admixture_k10_iter4, Admixture_k10_iter2
+	Admixture_k10_iter3 represents 1 run: run Admixture_k10_iter3
+	Admixture_k10_iter1 represents 1 run: run Admixture_k10_iter1
+	Admixture_k10_iter4 represents 1 run: run Admixture_k10_iter4
+	Admixture_k10_iter2 represents 1 run: run Admixture_k10_iter2
+Avg sim between modes = 0.797478
+
