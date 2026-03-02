@@ -5,18 +5,18 @@ multivariate, model-based, and phylogenetic distance-based approaches.
 
 ## Overview of Analyses
 
-1. Discriminant Analysis of Principal Components (DAPC)
-   - DAPC Analysis performed based on
-    - Ward’s clustering priors
-    - Sampling location priors
-   - Sample selection 
-    - Outlier filtering based on Euclidean distance
+1. **Discriminant Analysis of Principal Components (DAPC)**
+   - DAPC analysis performed based on:
+     - Ward’s clustering priors
+     - Sampling location priors
+   - Sample selection:
+     - Outlier filtering based on Euclidean distance
 
-2. ADMIXTURE analysis (K = 1–10)
+2. **ADMIXTURE analysis (K = 1–10)**
    - Multiple iterations per K
-   - Consensus visualization using pong
+   - Consensus visualization using *pong*
 
-3. Phylogenetic distance-based methods
+3. **Phylogenetic distance-based methods**
    - Neighbor-joining tree (Prevosti distance)
    - Bootstrapped dendrogram (Nei’s distance)
 
@@ -43,3 +43,4 @@ multivariate, model-based, and phylogenetic distance-based approaches.
 3. Run ADMIXTURE (`04`)
 4. Visualise ADMIXTURE results (`05`)
 5. Build Neighbour joining trees (`06`, `07`) + Visualise tree results
+
