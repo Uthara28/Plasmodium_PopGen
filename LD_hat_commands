@@ -1,0 +1,5 @@
+/home/usriniva/Desktop/masters/ld_hat/interval -seq /home/usriniva/Desktop/masters/Plasmodium_us_scripts/ld_hat_data/samples_50/GT_MaeSot_Pf3D7_13_v3_sample_gt_counts.txt -loc /home/usriniva/Desktop/masters/Plasmodium_us_scripts/ld_hat_data/samples_50/Pf3D7_13_v3_seg_sites_MaeSot.txt -lk /home/usriniva/Desktop/masters/plasmodium/Final_analysis/2_LD_Hat/new_lk.txt
+
+/home/usriniva/Desktop/masters/ld_hat/stat -input /home/usriniva/Desktop/masters/plasmodium/Final_analysis/2_LD_Hat/LD_hat_results_womask/interval_chrom10_ms/rates.txt -loc /home/usriniva/Desktop/masters/Plasmodium_us_scripts/ld_hat_data/samples_50/Pf3D7_10_v3_seg_sites_MaeSot.txt
+
+/home/usriniva/Desktop/masters/ld_hat/stat -input /home/usriniva/Desktop/masters/plasmodium/Final_analysis/2_LD_Hat/LD_hat_results_womask/interval_chrom11_ms/rates.txt -loc /home/usriniva/Desktop/masters/Plasmodium_us_scripts/ld_hat_data/samples_50/Pf3D7_11_v3_seg_sites_MaeSot.txt
