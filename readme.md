@@ -25,5 +25,5 @@ pf_mm_coalescent/
 │   └── comparison_plots/
 │
 ├── figures/
-│   ├── main_text/
-│   └── supplementary/
+    ├── main_text/
+    └── supplementary/
