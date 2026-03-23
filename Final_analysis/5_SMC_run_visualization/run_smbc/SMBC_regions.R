@@ -3,8 +3,8 @@
 ###################
 # Source function #
 ###################
-library(eSMC2,lib.loc="/data/proj2/home/students/u.srinivasan/R/library")
-library(BB,lib.loc="/data/proj2/home/students/u.srinivasan/R/library")
+library("eSMC2")
+library("BB")
 
 ########
 # Script #
@@ -22,7 +22,7 @@ r <- as.numeric(args[4])
 
 # Set the variables
 HS <- 32 #hidden states
-M <-8 #num haplotypes in mhs
+M <- 8 #num haplotypes in mhs
 NC <- 1 #No. of chromz
 rho <- r / mut_rate  # recom/mut ratio
 

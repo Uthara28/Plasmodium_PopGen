@@ -54,16 +54,16 @@ process_mhs() {
         echo "Mutation rate: $mut_rate"
         echo "Recombination rate: $recomb_rate"
         echo "Executing command:"
-        echo "Rscript --vanilla /data/proj2/home/students/u.srinivasan/Plasmodium_us/Inputs/SMC/SMBC_regions/SMBC_regions.R \"$mhs_file\" \"$output_subdir\" \"$mut_rate\" \"$recomb_rate\""
+        echo "Rscript --vanilla /home/usriniva/Desktop/masters/plasmodium/Final_analysis/5_SMC_run_visualization/run_smbc/SMBC_regions.R \"$mhs_file\" \"$output_subdir\" \"$mut_rate\" \"$recomb_rate\""
         echo "------------------------"
     } >> "$log_file"
 
     # Execute the R script with the .mhs file and log output
-    Rscript --vanilla /data/proj2/home/students/u.srinivasan/Plasmodium_us/Inputs/SMC/SMBC_regions/submit_smbc/SMBC_regions.R \
+    Rscript --vanilla /home/usriniva/Desktop/masters/plasmodium/Final_analysis/5_SMC_run_visualization/run_smbc/SMBC_regions.R \
     "$mhs_file" "$output_subdir" "$mut_rate" "$recomb_rate" >> "$log_file" 2>&1
 }
 
 export -f process_mhs  # Export function for parallel execution
 
 # Find all .mhs files and run them in parallel with the process_mhs function
-find "$input_dir" -type f -name "*.mhs" | parallel --verbose -j 20 process_mhs {} "$input_dir" "$output_dir_with_rate" "$mut_rate"
+find "$input_dir" -type f -name "*.mhs" | parallel --verbose -j 10 process_mhs {} "$input_dir" "$output_dir_with_rate" "$mut_rate"
