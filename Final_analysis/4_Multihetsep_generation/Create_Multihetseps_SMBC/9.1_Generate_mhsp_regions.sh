@@ -46,10 +46,10 @@ for MASK in "${MASK_DIR}/"*_merged.bed.gz; do
 
     
     # Construct the Python command
-    PYTHON_CMD="python3 /data/proj2/home/students/u.srinivasan/Plasmodium_us/Inputs/SMC/scripts_msmc_esmc/scripts_make_input/generate_multihetsep.py --mask=$MASK"
+    PYTHON_CMD="python3 /home/usriniva/Desktop/masters/plasmodium/Final_analysis/4_Multihetsep_generation/Create_Multihetseps_SMBC/generate_multihetsep.py --mask=$MASK"
 
     # Find all unique individual VCF files for the current chromosome and append to Python command
-    for VCF_FILE in $IND_VCF_DIR/chr${chr_number}_${top_individuals}_${IND_PREFIX}*.vcf.gz; do
+    for VCF_FILE in $IND_VCF_DIR/chr${chr_number}_${top_individuals}_*${IND_PREFIX}*.vcf.gz; do
         # Check if the file exists and ends with .vcf.gz
         if [[ $VCF_FILE == *.vcf.gz ]]; then 
             PYTHON_CMD+=" $VCF_FILE"
