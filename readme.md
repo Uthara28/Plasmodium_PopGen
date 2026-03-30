@@ -5,7 +5,7 @@ This repository contains data, scripts, and results for a study investigating **
 
 ## Overview
 
-The study aims to:
+The repository aims to:
 - Detect signatures of multiple‑merger coalescence (e.g., skewed offspring distributions, superspreading‑like transmission) in global *P. falciparum* populations.
 - Compare inferred genealogies, effective population size trajectories, and site‑frequency spectra under Kingman vs. MMC models (e.g., Beta‑coalescent parametrizations).
 - Relate MMC signatures to epidemiological and ecological factors such as transmission intensity, host‑population structure, and drug‑pressure regimes.
