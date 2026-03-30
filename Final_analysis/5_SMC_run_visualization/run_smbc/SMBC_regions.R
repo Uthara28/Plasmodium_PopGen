@@ -24,7 +24,10 @@ r <- as.numeric(args[4])
 HS <- 32 #hidden states
 M <- 8 #num haplotypes in mhs
 NC <- 1 #No. of chromz
-rho <- r / mut_rate  # recom/mut ratio
+#rho <- r / mut_rate  # recom/mut ratio
+#OR
+
+rho<-10   # set to 10 as a prior, if you want method to work correctly
 
 #define input paths
 mhs_name <- basename(mhs_path)  # Get the mhs file name
@@ -62,7 +65,7 @@ Os <- Os[odd_and_last_two_row_indices,] #choose only the alternate haplotypes
 
 print(Os[,1:5])
 
-rho<-10
+
 
 print(paste("rho:", format(rho, scientific = TRUE, digits = 5)))
 
@@ -76,7 +79,7 @@ results <- SMBC(
     pop = FALSE, #True if population size is assumed constant
     alpha =1.9, 
     B=T,  #True to estimate alpha
-    ER=FALSE,
+    ER=TRUE,#True to estimate recombination rate
     ploidy=1,
     mu_real=mut_rate,
     pop_vect = rep(4,(HS/4)), #vector of hidden state sharing their population size parameter. Sum must be equal to hidden state number

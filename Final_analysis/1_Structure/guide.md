@@ -39,7 +39,7 @@ multivariate, model-based, and phylogenetic distance-based approaches.
 ## Execution Order
 
 1. Run DAPC analyses (`01`, `02`)
-2. Filter confidently assigned individuals (`03`)
-3. Run ADMIXTURE (`04`)
-4. Visualise ADMIXTURE results (`05`)
-5. Build Neighbour joining trees (`06`, `07`) + Visualise tree results
+2. Run ADMIXTURE (`04`)
+3. Visualise ADMIXTURE results (`05`)
+4. Build Neighbour joining trees (`06`, `07`) + Visualise tree results
+5. Filter confidently assigned individuals [dapc_plot.ipynb](dapc_plot.ipynb)
