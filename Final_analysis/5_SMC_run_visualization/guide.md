@@ -1,0 +1,76 @@
+# LDhat to find regions of high recombination to then mask for SMC analysis
+
+This directory contains all scripts used run and visualize the sequential markovian coalescent analysis of plasmodium chromosomes
+
+
+## Requirements
+
+### R packages
+- eSMC2 [eSMC2](https://github.com/TPPSellinger/eSMC2)
+
+## Execution Order
+
+1. **Run eSMC2 and SM$\beta$C**: Both SMC methods ae run on on multihetsep files generated in the previous folder[call_alleles_plus_accessibility_mask.ipynb](call_alleles_plus_accessibility_mask.ipynb)
+
+
+Each script and config file corresponds to one inference setting as described below.
+
+---
+
+## Datasets
+
+Both methods were applied to three datasets:
+
+- **Core regions**: filtered for callable, non-repetitive segments  
+- **Full chromosome**: includes all callable positions across entire chromosome  
+- **Core regions + high recombination regions** : filtered for callable, non-repetitive segments, and regions with $\rho/\theta$ <50, as inferred by LD hat
+
+---
+
+## Model configurations
+
+### eSMC2
+
+**Total hidden states:** 40  
+**Time segmentation:** 10 segments with 4 hidden states each  
+**Mutation rate:** µ = 4.0425e-09 
+**Recombination rate:** r = 7.4e-07 (default for fixed-r models)  
+
+Two inference settings are implemented:
+
+1. **Fixed r**
+   - Infers only the population scaling constant (χₜ)
+   - Keeps r fixed (with r/µ = 183.055)
+
+
+2. **Free r**
+   - Infers both χₜ and r/µ
+   - Prior for r/µ = 1, bounds c(2,2) (allowing ±2 orders of magnitude)
+
+
+---
+
+### SMβC
+
+**Total hidden states:** 40  
+**Coalescent parameter:** β-coalescent parameter (α)  
+**Mutation rate:** µ = 4.0425e-09
+**Recombination rate:** r = 7.4e-07  (default for fixed-r models)  
+
+Three inference settings are included:
+
+1. **Fixed r**
+   - Infers only α with fixed r (r/µ = 10)
+   - Previous runs showed that r/µ > 100 flattens demography
+
+
+
+2. **Free r**
+   - Infers both α and r/µ jointly, with prior r/µ = 1 and bounds c(2,2)
+
+
+
+3. **Free r (accurate prior)**
+   - Infers α and r/µ with accurate simulated prior (ρ/µ from simulations)
+   
+
