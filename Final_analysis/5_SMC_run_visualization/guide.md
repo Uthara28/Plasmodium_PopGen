@@ -29,7 +29,7 @@ Both methods were applied to three datasets:
 
 ### eSMC2
 
-**Total hidden states:** 40  
+**Total hidden states:** 32
 **Time segmentation:** 10 segments with 4 hidden states each  
 **Mutation rate:** µ = 4.0425e-09 
 **Recombination rate:** r = 7.4e-07 (default for fixed-r models)  

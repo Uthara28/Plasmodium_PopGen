@@ -13,15 +13,16 @@ multivariate, model-based, and phylogenetic distance-based approaches.
      - Sampling location priors
    - Sample selection:
      - Outlier filtering based on Euclidean distance
+   [DAPC](DAPC)
 
 2. **ADMIXTURE analysis (K = 1–10)**
    - Multiple iterations per K
    - Consensus visualization using *pong*
-
+    [Admixture](Admixture)
 3. **Phylogenetic distance-based methods**
    - Neighbor-joining tree (Prevosti distance)
    - Bootstrapped dendrogram (Nei’s distance)
-
+    [Nj_tree](Nj_tree)
 ## Requirements
 
 ### R packages
