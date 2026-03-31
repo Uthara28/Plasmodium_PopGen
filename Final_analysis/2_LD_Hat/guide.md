@@ -22,7 +22,7 @@ This directory contains all scripts used to generate data for and visualize LDha
 
 2. **Run LDhat** command:  
 
-# generate lk file for 50 samples 
+## generate lk file for 50 samples 
 
 ```bash
  ./lkgen -lk <premade lk file from ldhat github> -nseq <int>
@@ -30,7 +30,7 @@ This directory contains all scripts used to generate data for and visualize LDha
 
   [new_lk.txt](new_lk.txt)
 
-# Run LDhat interval command
+## Run LDhat interval command
 ```bash
 ./interval -seq masked_sites.sites -loc masked_sites.locs -lk lk_n50_t0.001.txt -its 2000000 -bpen 5 -samp 2000 -prefix subpop_chrom_14
 
