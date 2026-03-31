@@ -5,6 +5,8 @@ multivariate, model-based, and phylogenetic distance-based approaches.
 
 ## Overview of Analyses
 
+### Folders 
+
 1. **Discriminant Analysis of Principal Components (DAPC)**
    - DAPC analysis performed based on:
      - Ward’s clustering priors

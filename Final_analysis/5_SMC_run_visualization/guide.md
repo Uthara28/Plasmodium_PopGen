@@ -10,10 +10,8 @@ This directory contains all scripts used run and visualize the sequential markov
 
 ## Execution Order
 
-1. **Run eSMC2 and SM $\beta$ C**: Both SMC methods ae run on on multihetsep files generated in the previous folder[call_alleles_plus_accessibility_mask.ipynb](call_alleles_plus_accessibility_mask.ipynb)
+1. **Run eSMC2 and SM $\beta$ C**: Both SMC methods ae run on on multihetsep files generated in the previous folder [4_Multihetsep_generation](4_Multihetsep_generation)
 
-
-Each script and config file corresponds to one inference setting as described below.
 
 ---
 
@@ -74,3 +72,15 @@ Three inference settings are included:
    - Infers α and r/µ with accurate simulated prior (ρ/µ from simulations)
    
 
+---
+
+## Folders
+
+#### 1. Final alphas 
+ - Final infered alphas for the 'core genome' dataset [1_Final_alphas](1_Final_alphas)
+ - Final alphas inferred for the 'core genome + reasonable recombination" dataset
+
+#### 3. Plot SM $\beta$ C results 
+ - The SMC demographic and $\alpha$ inference using SMBC in fixed r, free r and free r with an $\alpha$ prior for the full chromosome, and 'core genome' dataset for Maesot [smbc_maesot_plot](smbc_maesot_fullchr_regions_comparison_m4e-09.ipynb) and Binhphuoc Vietnam [smbc_bv_plot](smbc_fullchr_regions_vietrata_comparison_m4e-09.ipynb) datasets 
+
+ - The SMC demographic and $\alpha$ inference using SMBC in fixed r, free r and free r with an $\alpha$ prior for the 'core genome + reasonable recombination' dataset [smbc_regions_maesot](smbc_regions_reasonable_recomb_maesot_comparison_m4e-09)

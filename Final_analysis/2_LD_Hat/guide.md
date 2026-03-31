@@ -1,6 +1,6 @@
 # LDhat to find regions of high recombination to then mask for SMC analysis
 
-This directory contains all scripts used to generate data for and visualize LDhat results, to filter regions that have high $\rho/\theta_w$, and remove these from the callable sites mask during SMC multighetsepfile data preparation
+This directory contains all scripts used to generate data for and visualize LDhat results, to filter regions that have high $\rho/\theta_w$, and remove these from the callable sites mask during SMC multihetsepfile data preparation. This is to create the dataset hereafter called 'Core genome + reasonable recombination' dataset, which is created by masking the both the uncallable subtelomeric and hypervariable repeat regions and the regions with high $\rho/theta_w$ > 50. 
 
 ## Overview of Analyses
 
@@ -17,9 +17,18 @@ This directory contains all scripts used to generate data for and visualize LDha
 ## Execution Order
 
 1. **Generate data** for LDhat format (with problematic regions masked):  
-   [call_alleles_plus_accessibility_mask.ipynb](call_alleles_plus_accessibility_mask.ipynb)
+  
+   
 
 2. **Run LDhat** command:  
+
+# generate lk file for 50 samples 
+
+```bash
+ ./lkgen -lk <premade lk file from ldhat github> -nseq <int>
+```
+
+  [new_lk.txt](new_lk.txt)
 
 # Run LDhat interval command
 ```bash
