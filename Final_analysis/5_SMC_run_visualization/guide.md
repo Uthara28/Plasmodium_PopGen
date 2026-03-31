@@ -10,7 +10,7 @@ This directory contains all scripts used run and visualize the sequential markov
 
 ## Execution Order
 
-1. **Run eSMC2 and SM$\beta$C**: Both SMC methods ae run on on multihetsep files generated in the previous folder[call_alleles_plus_accessibility_mask.ipynb](call_alleles_plus_accessibility_mask.ipynb)
+1. **Run eSMC2 and SM $\beta$ C**: Both SMC methods ae run on on multihetsep files generated in the previous folder[call_alleles_plus_accessibility_mask.ipynb](call_alleles_plus_accessibility_mask.ipynb)
 
 
 Each script and config file corresponds to one inference setting as described below.
