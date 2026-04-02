@@ -59,7 +59,7 @@ process_mhs() {
     } >> "$log_file"
 
     # Execute the R script with the .mhs file and log output
-    Rscript --vanilla /home/usriniva/Desktop/masters/plasmodium/Final_analysis/5_SMC_run_visualization/run_smbc/SMBC_regions.R \
+    Rscript --vanilla /home/usriniva/Desktop/masters/plasmodium/Final_analysis/5_SMC_run_visualization/5_run_smbc/SMBC_regions.R \
     "$mhs_file" "$output_subdir" "$mut_rate" "$recomb_rate" >> "$log_file" 2>&1
 }
 

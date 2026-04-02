@@ -23,6 +23,7 @@ multivariate, model-based, and phylogenetic distance-based approaches.
    - Neighbor-joining tree (Prevosti distance)
    - Bootstrapped dendrogram (Nei’s distance)
     [Nj_tree](Nj_tree)
+    
 ## Requirements
 
 ### R packages

@@ -22,7 +22,7 @@ This directory contains all scripts used to generate data for and visualize LDha
 
 2. **Run LDhat** command:  
 
-## generate lk file for 50 samples 
+## Generate lk file for 50 samples 
 
 ```bash
  ./lkgen -lk <premade lk file from ldhat github> -nseq <int>
