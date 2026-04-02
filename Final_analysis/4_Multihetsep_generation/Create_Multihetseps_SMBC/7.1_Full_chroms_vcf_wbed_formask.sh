@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # This script creates the callable sites mask for the 'FUll Chromosome' data
 # This script requires a
 #   - <base_dir> with ABfilt/ subdirectory of AB‑filtered VCFs and bcftools/vcf2bed/bedtools.

@@ -53,10 +53,7 @@ This repository provides a pipeline to generate `multihetsep` input files for SM
 10. **Isolate_ind_vcfs.sh**  
     Extract individual VCFs from the filtered cohort dataset.
 
-11. **Generate_mhsp_regions.sh**  
-    Define genomic regions to be used in multihetsep generation.
-
-12. **Generate_mhsp.sh**  
+11. **Generate_mhsp.sh**  
     Produce **multihetsep**-formatted files for downstream MSMC/PSMC analysis.
 
 ## Notes
