@@ -8,13 +8,13 @@ This repository provides a pipeline to generate `multihetsep` input files for SM
 
 - **Disclaimer** This pipeline is for an _extremely_ conservative data generation for plasmodium, i.e. several different forms of site filtering is implemented. This is as plasmodim has a partiularly difficult genome to work with (uncallable regions (subtelomeric repeats, hypervariable and regions of high recombination). Modify the works=flow as needed)
 
-### Key features:**
+### Features:
 - Generates both **full chromosome** and **core regions** datasets (excluding subtelomeres, centromeres, hypervariable regions) and the newest data set which only retains the 'core regions' and additionally excludes regiosn of high recombination as inferred by LD hat.
 - Handles Plasmodium-specific challenges (haploid genome, MOI-induced het calls, depth filtering)
 - Produces eSMC2/SMβC-ready files that can be plugged into `Get_real_data()` 
 
 
-### Output format (4 columns): 
+### Output format of `multihetsepfile`(4 columns): 
 
 `chromosome position homozygous_distance phased_alleles`
 
