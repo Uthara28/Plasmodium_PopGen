@@ -1,5 +1,23 @@
 #!/bin/bash
 
+
+# This script requires a
+#   - <VCF_DIR>   : directory containing per‑chromosome cohort geno VCFs (*chr[0-9]+_cohort.allsites.geno.vcf.gz)
+#   - <BASE_DIR>  : directory containing depth/missingness tables from Save_depth_missingness_stats
+#   - <OUTPUT_DIR>: writable directory for output individual lists and subset VCFs
+#   - Python 3 with pandas
+#   - bcftools in PATH
+
+
+# What it does
+#   - reads depth and missingness tables from $BASE_DIR
+#   - merges them, computes per‑individual mean depth and mean missing percentage across chromosomes
+#   - filters individuals with mean depth between 30 and 90
+#   - writes two top‑individual lists (top 8 and top 4 by lowest missingness) to $OUTPUT_DIR
+#   - uses those lists to subset the cohort VCFs by individual, producing one per‑chromosome VCF for top 4 and top 8
+#     under $OUTPUT_DIR (chrNN_top4_individuals_subset.allsites.geno.vcf.gz, etc.).
+
+
 # Input directories
 VCF_DIR="$1"
 BASE_DIR="$2"

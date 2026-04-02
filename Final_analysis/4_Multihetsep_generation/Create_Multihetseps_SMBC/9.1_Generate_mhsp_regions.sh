@@ -1,8 +1,24 @@
 #!/bin/bash
 
+#!/bin/bash
+
+
+# This script requires a
+#   - cohort and individual prefix labels
+#   - per‑chromosome, per‑top‑group (e.g., top4, top8) individual VCFs in $IND_VCF_DIR
+#   - corresponding merged BED masks in $MASK_DIR
+#   - generate_multihetsep.py located at the hardcoded path
+
+# What it does
+#   - for each merged‑mask BED file:
+#     detects chromosome, top‑individual group, and region label from the filename
+#   - runs `generate_multihetsep.py` over the matching set of individual VCFs
+#   - writes one multihetsep file per chromosome‑group‑region into $MHSP_DIR
+#   for downstream MSMC/PSMC2 runs.
+
 # Check if the required arguments are provided
 if [ "$#" -ne 5 ]; then
-    echo "Usage: $0 <coh_prefix> <ind_prefix> <individual_vcf_dir> <mask_dir> <out_dir>"
+    echo "Usage: $0 <coh_prefix> <ind_prefix> <individual_vcf_dir> <mask_dir> <MHSP_DIR>"
     exit 1
 fi
 
@@ -11,10 +27,10 @@ COH_PREFIX=$1
 IND_PREFIX=$2
 IND_VCF_DIR=$3
 MASK_DIR=$4
-OUT_DIR=$5
+MHSP_DIR=$5
 
 # Create the output directory if it does not exist
-mkdir -p "$OUT_DIR"
+mkdir -p "$MHSP_DIR"
 
 # Loop over chromosomes 01 to 14
 for MASK in "${MASK_DIR}/"*_merged.bed.gz; do
@@ -57,7 +73,7 @@ for MASK in "${MASK_DIR}/"*_merged.bed.gz; do
     done
 
     # Set the output file path
-    OUTPUT_FILE="$OUT_DIR/${COH_PREFIX}_chr${chr_number}_${top_individuals}_${region_part}.mhs"
+    OUTPUT_FILE="$MHSP_DIR/${COH_PREFIX}_chr${chr_number}_${top_individuals}_${region_part}.mhs"
 
     # Execute the Python command and redirect output to the file
     echo "Processing chromosome $filename with region $region_part"

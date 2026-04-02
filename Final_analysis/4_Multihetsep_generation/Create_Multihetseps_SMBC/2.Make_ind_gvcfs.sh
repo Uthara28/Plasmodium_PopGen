@@ -1,18 +1,29 @@
 #!/bin/bash
 
 ## Run using: ./run_haplotypecaller.sh /path/to/reference.fasta /path/to/base_directory
-# This script requires a base directory containing BAM files from across all individuals and chromosomes.
+# This script requires a
+#   - base directory containing a subdirectory 'BAMs/', which holds all per‑sample,
+#     per‑chromosome BAM files (created by the previous download/split script)
+#   - a reference genome in FASTA format, with index files (.fai, .dict) in place
+# The script will:
+#   - create a 'VCFs' subdirectory under the base directory
+#   - run GATK HaplotypeCaller on each BAM in BAMs/, generating per‑chromosome GVCFs
+#   - index all output GVCFs with tabix
+
+
 
 # Check if the necessary arguments are provided
 if [ "$#" -ne 3 ]; then
-    echo "Usage: $0 <reference_file> <base_directory> <bam_dir>"
+    echo "Usage: $0 <reference_file> <base_directory> "
     exit 1
 fi
 
 # Command-line arguments
+
 reference="$1"
-base_dir="$2"
-bam_dir="$3"
+base_dir="$2" # this is directory within which the previous script has created a directory 'BAMs'
+
+
 # Create the output directory if it does not exist
 mkdir -p "$base_dir/VCFs"
 

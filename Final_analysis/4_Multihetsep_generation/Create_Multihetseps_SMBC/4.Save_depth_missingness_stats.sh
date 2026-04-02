@@ -1,8 +1,23 @@
 #!/bin/bash
 
-# Directory containing the VCF files
-VCF_DIR="$1"
-BASE_DIR="$2"  # Set your output directory
+# This script requires a
+#   - <VCF_DIR>  : directory containing cohort geno VCFs named like *chr[0-9]_cohort.allsites.geno.vcf.gz
+#   - <BASE_DIR> : writable output directory for depth/missingness tables
+#   - vcftools in PATH
+
+
+# What it does
+# For each chromosome VCF:
+#   - runs vcftools --depth and --missing-indv
+#   - appends per‑individual depth and missingness stats (by chromosome) to two tab‑separated files:
+#     ${BASE_DIR}/depth_filtered_individuals.txt
+#     ${BASE_DIR}/missingness_filtered_individuals.txt
+# Output tables are then used later to subset individuals by depth and missingness thresholds.
+
+
+
+VCF_DIR="$1"# Directory containing the VCF files
+BASE_DIR="$2"  # Set your output directory, can use the 
 OUTPUT_FILE_depth="${BASE_DIR}/depth_filtered_individuals.txt"
 OUTPUT_FILE_miss="${BASE_DIR}/missingness_filtered_individuals.txt"
 

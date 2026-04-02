@@ -1,6 +1,13 @@
 #!/bin/bash
 
-base_dir=$1
+# This script requires a
+#   - <base_dir> with a subdirectory ./Subset_gVCFs/ containing *_subset.vcf.gz files
+#   - bcftools in PATH
+
+# What it does
+#   - filters VCFs (no missing genotypes, PASS only, SNPs only)
+#   - extracts one VCF per sample into ${base_dir}/individual_vcfs/
+#   - for downstream multihetsep .
 
 # Ensure output directory exists
 mkdir -p "$base_dir/individual_vcfs"

@@ -1,11 +1,27 @@
 #!/bin/bash
 
+# This script requires a
+#   - <VCF_DIR>  : directory containing GT‑filled, allsites geno VCFs (*.allsites.geno.vcf.gz)
+#   - <BASE_DIR> : writable directory where filtered VCFs will be written under ./ABfilt/
+#   - bcftools with the +setGT plugin and bgzip in PATH
+
+# What it does
+#   - applies three allele‑balance (AB) filters using bcftools +setGT:
+#       1. sets genotype to missing if max(AD)/sum(AD) < 0.9
+#       2. sets 0/1 or . → 1/1 if AD[0] < AD[1]
+#       3. sets 0/1 or . → 0/0 if AD[0] > AD[1]
+#   - outputs filtered VCFs named *_ABfilt.allsites.geno.vcf.gz in $BASE_DIR/ABfilt/
+#   - indexes each filtered VCF with bcftools index
+# This step is optional and should be used only when an extra‑conservative allele‑balance filter is desired
+# before downstream analyses 
+
+
 # Define input and output directories
 VCF_DIR="$1"          # Directory containing the VCF files
-OUTPUT_DIR="$2"       # Directory to store output VCF files
+BASE_DIR="$2"       # Directory to store output VCF files
 
 # Create output directory if it doesn't exist
-mkdir -p "$OUTPUT_DIR/ABfilt"
+mkdir -p "$BASE_DIR/ABfilt"
 
 
 # Loop over each VCF file in the input directory
@@ -23,11 +39,11 @@ for VCF_IN in "$VCF_DIR"/*.vcf.gz; do
     bcftools +setGT -- -t q -n c:'0/0' -i '(GT="0/1" && FORMAT/AD[:0]>FORMAT/AD[:1]) || (GT="1/0" && FORMAT/AD[:0]>FORMAT/AD[:1]) || (GT="." && FORMAT/AD[:0]>FORMAT/AD[:1])' | \
     
     # Compress the final VCF output with bgzip
-    bgzip -c > "${OUTPUT_DIR}/ABfilt/${FILENAME}_ABfilt.allsites.geno.vcf.gz"
+    bgzip -c > "${BASE_DIR}/ABfilt/${FILENAME}_ABfilt.allsites.geno.vcf.gz"
     
-    bcftools index "${OUTPUT_DIR}/ABfilt/${FILENAME}_ABfilt.allsites.geno.vcf.gz"
+    bcftools index "${BASE_DIR}/ABfilt/${FILENAME}_ABfilt.allsites.geno.vcf.gz"
     
-    echo "Output saved to $OUTPUT_DIR/${FILENAME}_ABfilt.allsites.geno.vcf.gz"
+    echo "Output saved to $BASE_DIR/${FILENAME}_ABfilt.allsites.geno.vcf.gz"
 done
 
 echo "Processing complete for all VCF files in $VCF_DIR."

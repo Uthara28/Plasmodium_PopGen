@@ -1,13 +1,69 @@
 # README: Complete multihetsep Pipeline for MSMC2/eSMC2/SMβC (Plasmodium falciparum Pf7)
 
 ## Overview
-This repository provides a pipeline to generate `multihetsep` input files for SMC-based demographic inference (MSMC2, eSMC2, SMβC) from Plasmodium falciparum Pf7 BAM files. The pipeline is modified from Miles Anderson's HaplotypeCaller protocol.
-- In the final study we use processes 4 high-quality samples per subpopulation (Maesot: PD0524-C, PD0477-C, PD0529-C, PD0543-C; North Cambodia-Vietnam: PH0879-C, PV0311-C, PV0333-C, PV0254-C) across all 14 Pf3D7 chromosomes.
 
-**Key features:**
-- Generates both **full chromosome** and **core regions** datasets (excluding subtelomeres, centromeres, hypervariable regions)
+This repository provides a pipeline to generate `multihetsep` input files for SMC-based demographic inference (MSMC2, eSMC2, SMβC) from Plasmodium falciparum Pf7 BAM files. The pipeline is modified from Miles Anderson's HaplotypeCaller protocol.[smcdataprocessing](https://gitlab.com/milesandersonmn/smcdataprocessing)
+
+- In the final study we use processes 4 high-quality samples per subpopulation, the 'top 4' individuals (Maesot: PD0524-C, PD0477-C, PD0529-C, PD0543-C; North Cambodia-Vietnam: PH0879-C, PV0311-C, PV0333-C, PV0254-C) across all 14 Pf3D7 chromosomes.
+
+- **Disclaimer** This pipeline is for an _extremely_ conservative data generation for plasmodium, i.e. several different forms of site filtering is implemented. This is as plasmodim has a partiularly difficult genome to work with (uncallable regions (subtelomeric repeats, hypervariable and regions of high recombination). Modify the works=flow as needed)
+
+### Key features:**
+- Generates both **full chromosome** and **core regions** datasets (excluding subtelomeres, centromeres, hypervariable regions) and the newest data set which only retains the 'core regions' and additionally excludes regiosn of high recombination as inferred by LD hat.
 - Handles Plasmodium-specific challenges (haploid genome, MOI-induced het calls, depth filtering)
 - Produces eSMC2/SMβC-ready files that can be plugged into `Get_real_data()` 
 
 
-**Output format** (4 columns): `chromosome position homozygous_distance phased_alleles`
+### Output format (4 columns): 
+
+`chromosome position homozygous_distance phased_alleles`
+
+# Pipeline for Multihetsep Generation
+
+
+## Execution Order
+
+1. **Download_BAM_parallel.sh**  
+   Parallel download of BAM files for all samples.
+
+2. **Make_ind_gvcfs.sh**  
+   Generate individual GVCFs from BAMs using `HaplotypeCaller`.
+
+3. **Cohort_gvcfs.sh**  
+   Combine individual GVCFs into a cohort-level file for joint genotyping.
+
+4. **Save_depth_missingness_stats**  
+   Compute and save per-sample depth and missingness statistics.
+
+5. **Subset_bydepth_missingness**  
+   Filter samples or sites by defined depth/missingness thresholds.
+
+6. **ABfilt_formask.sh**  
+   Apply allele balance filters and prepare variant masks.
+
+7. **Full_chroms_vcf_wbed_formask**  
+   Generate per-chromosome VCFs and corresponding BED masks for callable regions.
+
+8. **Low_Recombination_Regions_vcf_wbed_formask_northcam_viet.sh**  
+   (Optional) Filter for low-recombination regions in Northcam–Viet population.
+
+9. **Low_Recombination_Regions_vcf_wbed_formask_maesot.sh**  
+   (Optional) Filter for low-recombination regions in Maesot population.
+
+10. **Isolate_ind_vcfs.sh**  
+    Extract individual VCFs from the filtered cohort dataset.
+
+11. **Generate_mhsp_regions.sh**  
+    Define genomic regions to be used in multihetsep generation.
+
+12. **Generate_mhsp.sh**  
+    Produce **multihetsep**-formatted files for downstream MSMC/PSMC analysis.
+
+## Notes
+
+
+- Run scripts sequentially in the order listed above.
+- Edit file paths, reference genome, and input directories in each script to match your project setup.
+- the directory [missingness_depth_stats](missingness_depth_stats) contains the tables egnerated by [4.Save_depth_missingness_stats](4.Save_depth_missingness_stats) which is then processed to take the top 4 and top 8 individuals with least missingness for downstream analysis
+- [generate_multihetsep.py](generate_multihetsep.py) is the official script provided by MSMC tools for multihetsep generation. 
+

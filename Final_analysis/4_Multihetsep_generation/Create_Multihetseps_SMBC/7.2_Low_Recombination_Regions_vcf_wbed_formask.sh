@@ -1,5 +1,18 @@
 #!/bin/bash
 
+#!/bin/bash
+
+# This script creates callable‑sites masks for “core + reasonable recombination” regions in the Maesot subpopulation,
+# by excluding segments of high Rho/theta inferred via LDhat.
+
+# This script requires a
+#   - <base_dir> with ABfilt/ subdirectory of AB‑filtered VCFs and bcftools/vcf2bed/bedtools.
+
+# What it does
+#   - restricts each chromosome to predefined low‑recombination intervals
+#   - filters VCFs (no missing, PASS only, DP > 30), converts to BED, then merges intervals
+#   - saves chromosome‑region‑specific merged masks to ${base_dir}/Regions_Final_Masks/ for multihetsep.
+
 # Define the input directory where VCF files are located
 base_dir="$1"
 
