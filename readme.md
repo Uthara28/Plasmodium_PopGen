@@ -20,3 +20,8 @@ The project is organized into the following folders:
   - Links and commands to download VCFs 
   - Quality‑filtering scripts using `bcftools`, `vcftools`, or similar tools.
   - Scripts to subset samples by \F_{ws} and year.
+
+
+### Thesis
+
+To understand the full study please read the full thesis project attached here [/Thesis_draft_merged.pdf](/Thesis_draft_merged.pdf)
