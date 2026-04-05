@@ -16,7 +16,8 @@ This directory contains all scripts used to generate data for and visualize LDha
 
 ## Execution Order
 
-1. **Generate data** for LDhat format (with problematic regions masked):  
+1. **Generate data** for LDhat 'sites' and 'locs format:   
+  - [/call_alleles_plus_accesibility_mask.ipynb](/plasmodium/Final_analysis/2_LD_Hat/call_alleles_plus_accesibility_mask.ipynb)
   
    
 
@@ -40,7 +41,7 @@ This directory contains all scripts used to generate data for and visualize LDha
 ./stat -rate rho_estimates_rates.txt -loc masked_sites.locs -summary -burn 200
 ```
 
-3. **Visualize ρ/θ**: Calculate θw using scikit-allel, and divide LD hat inferred $\rho$ by the $\theta_w$ to get regions with high $\rho/\theta_w$, to ensure accurate downstream SMC inference. 
+3. **Visualize ρ/θ**: Calculate θw using scikit-allel, and divide LD hat inferred $\rho$ by the $\theta_w$ to get regions with high $\rho/\theta_w$, to ensure accurate downstream SMC inference. This is shown here : [/Final_analysis/2_LD_Hat/plot_results.ipynb](/Final_analysis/2_LD_Hat/plot_results.ipynb)
 
 ## References
 
