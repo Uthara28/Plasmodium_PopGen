@@ -81,6 +81,7 @@ Three inference settings are included:
  - Final alphas inferred for the 'core genome + reasonable recombination" dataset
 
 #### 3. Plot SM $\beta$ C results 
- - The SMC demographic and $\alpha$ inference using SMBC in fixed r, free r and free r with an $\alpha$ prior for the full chromosome, and 'core genome' dataset for Maesot [smbc_maesot_plot](smbc_maesot_fullchr_regions_comparison_m4e-09.ipynb) and Binhphuoc Vietnam [smbc_bv_plot](smbc_fullchr_regions_vietrata_comparison_m4e-09.ipynb) datasets 
+ - The SMC demographic and $\alpha$ inference using SMBC in fixed r, free r and free r with an $\alpha$ prior for the full chromosome, and 'core genome' dataset for Maesot [smbc_maesot_plot](SMBC_analyse_new_data_with_reasonable_recomb/smbc_maesot_fullchr_regions_comparison_m4e-09.ipynb) and Binhphuoc Vietnam [smbc_bv_plot](SMBC_analyse_new_data_with_reasonable_recomb/smbc_fullchr_regions_vietrata_comparison_m4e-09.ipynb) datasets 
 
  - The SMC demographic and $\alpha$ inference using SMBC in fixed r, free r and free r with an $\alpha$ prior for the 'core genome + reasonable recombination' dataset [smbc_regions_maesot](smbc_regions_reasonable_recomb_maesot_comparison_m4e-09)
+
